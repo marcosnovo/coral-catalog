@@ -1,0 +1,941 @@
+{
+  "_comment": "Coral's live model catalog — the single source of truth (scripts/gen-catalog.py embeds it in the app). Each model lists PUBLIC evidence (benchmarks with source URL, date, vendor vs independent, and whether the number was read on the source page ('verified') or only seen in a search snippet / third-party copy). Coral computes the 0-100 capability scores from this evidence (Sources/CoralCore/Catalog/Scoring.swift); 'scores' are only the fallback estimate for capabilities with no evidence. Benchmark ids: see BenchmarkKind.all.",
+  "asOf": "2026-09-30",
+  "models": [
+    {
+      "id": "claude-fable-5-1",
+      "provider": "claude",
+      "displayName": "Claude Fable 5.1",
+      "tier": "frontier",
+      "status": "current",
+      "contextK": 1000,
+      "inputPerM": 10,
+      "outputPerM": 50,
+      "efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "defaultEffort": "high",
+      "scores": {
+        "reasoning": 97,
+        "coding": 95,
+        "review": 96,
+        "research": 95,
+        "writing": 95,
+        "speed": 35,
+        "economy": 15
+      },
+      "summary": "El modelo más capaz de Anthropic: razonamiento profundo, trabajo agéntico muy largo y máxima fiabilidad. Caro y lento.",
+      "benchmarks": [
+        {
+          "id": "terminal-bench-4",
+          "value": 55.8,
+          "source": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+          "asOf": "2026-09-01",
+          "independent": false,
+          "verified": true
+        },
+        {
+          "id": "hle",
+          "value": 60.9,
+          "source": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+          "asOf": "2026-09-01",
+          "independent": false,
+          "verified": true
+        },
+        {
+          "id": "hle-tools",
+          "value": 65.0,
+          "source": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+          "asOf": "2026-09-01",
+          "independent": false,
+          "verified": true
+        },
+        {
+          "id": "osworld",
+          "value": 77.9,
+          "source": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+          "asOf": "2026-09-01",
+          "independent": false,
+          "verified": true,
+          "note": "OSWorld 2.0, puntuación parcial"
+        },
+        {
+          "id": "gdpval-aa",
+          "value": 1853,
+          "source": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+          "asOf": "2026-09-01",
+          "independent": true,
+          "verified": true,
+          "note": "Ejecutado por Artificial Analysis (v2), publicado por Anthropic"
+        },
+        {
+          "id": "arc-agi-2",
+          "value": 90.0,
+          "source": "https://arcprize.org/results/anthropic-claude-fable-5-1",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false,
+          "note": "Semi-privado, esfuerzo máximo, $4.49/tarea"
+        },
+        {
+          "id": "aa-intelligence",
+          "value": 53,
+          "source": "https://artificialanalysis.ai/models/claude-fable-5-1",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false,
+          "note": "Esfuerzo máximo"
+        },
+        {
+          "id": "output-speed",
+          "value": 67.9,
+          "source": "https://artificialanalysis.ai/models/claude-fable-5-1",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false,
+          "note": "Esfuerzo máximo"
+        }
+      ],
+      "access": {
+        "plans": [
+          "max",
+          "enterprise",
+          "api"
+        ],
+        "partialPlans": [
+          "team"
+        ],
+        "source": "https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan",
+        "note": "En Pro y en asientos Team estándar solo con créditos de uso (fuera de los límites del plan)."
+      }
+    },
+    {
+      "id": "claude-opus-5-5",
+      "provider": "claude",
+      "displayName": "Claude Opus 5.5",
+      "tier": "frontier",
+      "status": "current",
+      "contextK": 1000,
+      "inputPerM": 4,
+      "outputPerM": 20,
+      "efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "defaultEffort": "medium",
+      "scores": {
+        "reasoning": 95,
+        "coding": 96,
+        "review": 94,
+        "research": 92,
+        "writing": 93,
+        "speed": 50,
+        "economy": 45
+      },
+      "summary": "Frontera a una fracción del precio de Fable: el mejor equilibrio para liderar equipos, programar y juzgar. Tiende a ser prolijo.",
+      "benchmarks": [
+        {
+          "id": "terminal-bench-4",
+          "value": 66.4,
+          "source": "https://www.anthropic.com/claude-opus-5-5",
+          "asOf": "2026-09-22",
+          "independent": false,
+          "verified": true,
+          "note": "Esfuerzo xhigh"
+        },
+        {
+          "id": "hle-tools",
+          "value": 67.7,
+          "source": "https://www.anthropic.com/claude-opus-5-5",
+          "asOf": "2026-09-22",
+          "independent": false,
+          "verified": true
+        },
+        {
+          "id": "osworld",
+          "value": 81.8,
+          "source": "https://www.anthropic.com/claude-opus-5-5",
+          "asOf": "2026-09-22",
+          "independent": false,
+          "verified": true,
+          "note": "OSWorld 2.1, puntuación parcial"
+        },
+        {
+          "id": "gdpval-aa",
+          "value": 1846,
+          "source": "https://www.anthropic.com/claude-opus-5-5",
+          "asOf": "2026-09-22",
+          "independent": true,
+          "verified": true,
+          "note": "Ejecutado por Artificial Analysis (v2.1)"
+        },
+        {
+          "id": "arc-agi-2",
+          "value": 93.3,
+          "source": "https://arcprize.org/results/anthropic-claude-opus-5-5",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false,
+          "note": "Semi-privado, esfuerzo alto"
+        },
+        {
+          "id": "lmarena-text",
+          "value": 1509,
+          "source": "https://arena.ai/leaderboard/text",
+          "asOf": "2026-09-25",
+          "independent": true,
+          "verified": false,
+          "note": "Esfuerzo alto; nº1 en texto"
+        },
+        {
+          "id": "lmarena-webdev",
+          "value": 1827,
+          "source": "https://arena.ai/leaderboard/code/webdev",
+          "asOf": "2026-09-25",
+          "independent": true,
+          "verified": false,
+          "note": "Esfuerzo máximo; nº1 en WebDev"
+        },
+        {
+          "id": "aa-intelligence",
+          "value": 58,
+          "source": "https://artificialanalysis.ai/models/claude-opus-5-5",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false,
+          "note": "Esfuerzo máximo (alto: 54, medio: 51)"
+        },
+        {
+          "id": "output-speed",
+          "value": 92.8,
+          "source": "https://artificialanalysis.ai/models/claude-opus-5-5",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false
+        }
+      ],
+      "access": {
+        "plans": [
+          "pro",
+          "max",
+          "team",
+          "enterprise",
+          "api"
+        ],
+        "source": "https://code.claude.com/docs/en/model-config"
+      }
+    },
+    {
+      "id": "claude-sonnet-5-5",
+      "provider": "claude",
+      "displayName": "Claude Sonnet 5.5",
+      "tier": "strong",
+      "status": "current",
+      "contextK": 1000,
+      "inputPerM": 2,
+      "outputPerM": 10,
+      "efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "defaultEffort": "high",
+      "scores": {
+        "reasoning": 90,
+        "coding": 94,
+        "review": 89,
+        "research": 88,
+        "writing": 89,
+        "speed": 70,
+        "economy": 65
+      },
+      "summary": "Casi frontera a mitad de precio que Opus y más rápido: probablemente el mejor valor para programar y ejecutar.",
+      "benchmarks": [
+        {
+          "id": "terminal-bench-4",
+          "value": 70.6,
+          "source": "https://www.anthropic.com/claude-sonnet-5-5",
+          "asOf": "2026-09-28",
+          "independent": false,
+          "verified": true,
+          "note": "Esfuerzo distinto al de Opus: comparar con cautela"
+        },
+        {
+          "id": "hle-tools",
+          "value": 64.5,
+          "source": "https://www.anthropic.com/claude-sonnet-5-5",
+          "asOf": "2026-09-28",
+          "independent": false,
+          "verified": true
+        },
+        {
+          "id": "osworld",
+          "value": 80.1,
+          "source": "https://www.anthropic.com/claude-sonnet-5-5",
+          "asOf": "2026-09-28",
+          "independent": false,
+          "verified": true,
+          "note": "OSWorld 2.1, puntuación parcial"
+        },
+        {
+          "id": "gdpval-aa",
+          "value": 1844,
+          "source": "https://www.anthropic.com/claude-sonnet-5-5",
+          "asOf": "2026-09-28",
+          "independent": true,
+          "verified": true,
+          "note": "Ejecutado por Artificial Analysis antes del lanzamiento"
+        },
+        {
+          "id": "aa-intelligence",
+          "value": 56,
+          "source": "https://artificialanalysis.ai/articles/claude-sonnet-5-5",
+          "asOf": "2026-09-28",
+          "independent": true,
+          "verified": false,
+          "note": "Esfuerzo máximo; nº2 global"
+        },
+        {
+          "id": "output-speed",
+          "value": 138.7,
+          "source": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false,
+          "note": "Esfuerzo máximo"
+        }
+      ]
+    },
+    {
+      "id": "claude-haiku-4-5",
+      "provider": "claude",
+      "displayName": "Claude Haiku 4.5",
+      "tier": "fast",
+      "status": "current",
+      "contextK": 200,
+      "inputPerM": 1,
+      "outputPerM": 5,
+      "efforts": [],
+      "scores": {
+        "reasoning": 65,
+        "coding": 74,
+        "review": 65,
+        "research": 65,
+        "writing": 74,
+        "speed": 85,
+        "economy": 85
+      },
+      "summary": "El más ágil y barato de Claude, de 2025: tareas simples y trabajo en paralelo. Muy por detrás en razonamiento.",
+      "benchmarks": [
+        {
+          "id": "swe-bench-verified",
+          "value": 73.3,
+          "source": "https://www.anthropic.com/news/claude-haiku-4-5",
+          "asOf": "2025-10-15",
+          "independent": false,
+          "verified": true,
+          "note": "bash + edición, media de 50 intentos"
+        },
+        {
+          "id": "aa-intelligence",
+          "value": 18,
+          "source": "https://artificialanalysis.ai/models/claude-4-5-haiku-reasoning",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false,
+          "note": "Con razonamiento"
+        },
+        {
+          "id": "output-speed",
+          "value": 84.5,
+          "source": "https://artificialanalysis.ai/models/claude-4-5-haiku",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-astra",
+      "provider": "openai",
+      "displayName": "GPT-6 Astra",
+      "tier": "frontier",
+      "status": "current",
+      "contextK": 272,
+      "inputPerM": 10,
+      "outputPerM": 50,
+      "efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "defaultEffort": "low",
+      "scores": {
+        "reasoning": 95,
+        "coding": 92,
+        "review": 94,
+        "research": 93,
+        "writing": 89,
+        "speed": 40,
+        "economy": 20
+      },
+      "summary": "El tope de OpenAI: nº1 en Humanity's Last Exam y con la tasa de alucinación más baja medida. Caro y lento.",
+      "availability": "Despliegue gradual: puede no estar disponible en todas las cuentas. Requiere Codex CLI 0.155 o superior. Con cuenta de ChatGPT, si tu plan no ofrece este modelo, Coral usa el predeterminado de tu cuenta y te avisa; con clave de API eliges cualquiera.",
+      "benchmarks": [
+        {
+          "id": "terminal-bench-4",
+          "value": 57.9,
+          "source": "https://openai.com/index/gpt-6-astra/",
+          "asOf": "2026-09-03",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "osworld",
+          "value": 72.6,
+          "source": "https://openai.com/index/gpt-6-astra/",
+          "asOf": "2026-09-03",
+          "independent": false,
+          "verified": false,
+          "note": "OSWorld 2.0"
+        },
+        {
+          "id": "deepswe",
+          "value": 74.1,
+          "source": "https://openai.com/index/gpt-6-astra/",
+          "asOf": "2026-09-03",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "browsecomp",
+          "value": 91.5,
+          "source": "https://openai.com/index/gpt-6-astra/",
+          "asOf": "2026-09-03",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "gpqa-diamond",
+          "value": 96.0,
+          "source": "https://openai.com/index/gpt-6-astra/",
+          "asOf": "2026-09-03",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "hle",
+          "value": 60.6,
+          "source": "https://labs.scale.com/leaderboard/hle-diamond",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false,
+          "note": "Scale SEAL, ±3.0; nº1"
+        },
+        {
+          "id": "aa-intelligence",
+          "value": 53,
+          "source": "https://artificialanalysis.ai/models/comparisons/gpt-6-1-sol-vs-gpt-6-astra",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false,
+          "note": "Esfuerzo máximo"
+        },
+        {
+          "id": "output-speed",
+          "value": 56,
+          "source": "https://artificialanalysis.ai/models/comparisons/gpt-6-1-sol-vs-gpt-6-astra",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false,
+          "note": "55.7–57 tok/s"
+        },
+        {
+          "id": "hallucination-rate",
+          "value": 51,
+          "source": "https://artificialanalysis.ai/articles/benchmarking-gpt-6-astra",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false,
+          "note": "AA-Omniscience, esfuerzo máximo"
+        }
+      ],
+      "access": {
+        "plans": [
+          "pro",
+          "prolite",
+          "enterprise",
+          "edu",
+          "api"
+        ],
+        "partialPlans": [
+          "business"
+        ],
+        "source": "https://learn.chatgpt.com/docs/pricing",
+        "note": "En Plus no está incluido (Plus: GPT-6 Sol y GPT-6 Luna)."
+      }
+    },
+    {
+      "id": "gpt-6.1-sol",
+      "provider": "openai",
+      "displayName": "GPT-6.1 Sol",
+      "tier": "frontier",
+      "status": "current",
+      "contextK": 272,
+      "inputPerM": 2,
+      "outputPerM": 10,
+      "efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "defaultEffort": "low",
+      "scores": {
+        "reasoning": 92,
+        "coding": 93,
+        "review": 90,
+        "research": 90,
+        "writing": 88,
+        "speed": 60,
+        "economy": 70
+      },
+      "summary": "El predeterminado de Codex desde el 29/09: casi el nivel de Astra por una quinta parte del coste.",
+      "availability": "Requiere Codex CLI 0.155 o superior. Con cuenta de ChatGPT, si tu plan no ofrece este modelo, Coral usa el predeterminado de tu cuenta y te avisa; con clave de API eliges cualquiera.",
+      "benchmarks": [
+        {
+          "id": "deepswe",
+          "value": 75.2,
+          "source": "https://openai.com/index/introducing-gpt-6-1-sol/",
+          "asOf": "2026-09-29",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "osworld",
+          "value": 71.4,
+          "source": "https://openai.com/index/introducing-gpt-6-1-sol/",
+          "asOf": "2026-09-29",
+          "independent": false,
+          "verified": false,
+          "note": "OSWorld 2.0"
+        },
+        {
+          "id": "aa-intelligence",
+          "value": 52,
+          "source": "https://artificialanalysis.ai/models/comparisons/gpt-6-1-sol-vs-gpt-6-astra",
+          "asOf": "2026-09-30",
+          "independent": true,
+          "verified": false
+        },
+        {
+          "id": "output-speed",
+          "value": 69.3,
+          "source": "https://artificialanalysis.ai/models/comparisons/gpt-6-1-sol-vs-gpt-6-astra",
+          "asOf": "2026-09-30",
+          "independent": true,
+          "verified": false
+        }
+      ]
+    },
+    {
+      "id": "gpt-6-luna",
+      "provider": "openai",
+      "displayName": "GPT-6 Luna",
+      "tier": "fast",
+      "status": "current",
+      "contextK": 272,
+      "inputPerM": 0.1,
+      "outputPerM": 0.5,
+      "efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "defaultEffort": "medium",
+      "scores": {
+        "reasoning": 84,
+        "coding": 85,
+        "review": 80,
+        "research": 82,
+        "writing": 83,
+        "speed": 80,
+        "economy": 95
+      },
+      "summary": "Rápido y muy barato: ideal para trabajo en paralelo y tareas sencillas.",
+      "availability": "Requiere Codex CLI 0.155 o superior. Con cuenta de ChatGPT, si tu plan no ofrece este modelo, Coral usa el predeterminado de tu cuenta y te avisa; con clave de API eliges cualquiera.",
+      "benchmarks": [
+        {
+          "id": "deepswe",
+          "value": 66.6,
+          "source": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+          "asOf": "2026-09-22",
+          "independent": false,
+          "verified": false,
+          "note": "Esfuerzo máximo"
+        },
+        {
+          "id": "osworld",
+          "value": 52.7,
+          "source": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+          "asOf": "2026-09-22",
+          "independent": false,
+          "verified": false,
+          "note": "OSWorld 2.0, esfuerzo máximo"
+        }
+      ],
+      "access": {
+        "plans": [
+          "plus",
+          "pro",
+          "prolite",
+          "business",
+          "enterprise",
+          "edu",
+          "api"
+        ],
+        "partialPlans": [
+          "free",
+          "go"
+        ],
+        "source": "https://learn.chatgpt.com/docs/pricing",
+        "note": "En Free y Go, solo en la app de escritorio y según despliegue."
+      }
+    },
+    {
+      "id": "gpt-6-sol",
+      "provider": "openai",
+      "displayName": "GPT-6 Sol",
+      "tier": "strong",
+      "status": "legacy",
+      "contextK": 272,
+      "inputPerM": 2,
+      "outputPerM": 10,
+      "efforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "defaultEffort": "medium",
+      "scores": {
+        "reasoning": 89,
+        "coding": 90,
+        "review": 87,
+        "research": 86,
+        "writing": 86,
+        "speed": 70,
+        "economy": 70
+      },
+      "summary": "Generación anterior (22/09), sustituido por GPT-6.1 Sol.",
+      "availability": "Requiere Codex CLI 0.155 o superior. Con cuenta de ChatGPT, si tu plan no ofrece este modelo, Coral usa el predeterminado de tu cuenta y te avisa; con clave de API eliges cualquiera.",
+      "benchmarks": [
+        {
+          "id": "deepswe",
+          "value": 68.8,
+          "source": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+          "asOf": "2026-09-22",
+          "independent": false,
+          "verified": false,
+          "note": "Esfuerzo máximo"
+        },
+        {
+          "id": "osworld",
+          "value": 64.4,
+          "source": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+          "asOf": "2026-09-22",
+          "independent": false,
+          "verified": false,
+          "note": "OSWorld 2.0, esfuerzo máximo"
+        },
+        {
+          "id": "terminal-bench-4",
+          "value": 43.0,
+          "source": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+          "asOf": "2026-09-22",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "lmarena-webdev",
+          "value": 1681,
+          "source": "https://arena.ai/leaderboard/code/webdev",
+          "asOf": "2026-09-25",
+          "independent": true,
+          "verified": false,
+          "note": "Esfuerzo máximo; nº2"
+        },
+        {
+          "id": "aa-intelligence",
+          "value": 47.5,
+          "source": "https://www.orcarouter.ai/blog/gpt-6-1-sol-independent-benchmark",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false
+        },
+        {
+          "id": "output-speed",
+          "value": 78,
+          "source": "https://artificialanalysis.ai/models/releases/gpt-6-sol",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false,
+          "note": "76–79 tok/s"
+        }
+      ],
+      "access": {
+        "plans": [
+          "plus",
+          "pro",
+          "prolite",
+          "business",
+          "enterprise",
+          "edu",
+          "api"
+        ],
+        "source": "https://learn.chatgpt.com/docs/pricing"
+      }
+    },
+    {
+      "id": "gemini-3.1-pro-preview",
+      "provider": "gemini",
+      "displayName": "Gemini 3.1 Pro (preview)",
+      "tier": "frontier",
+      "status": "current",
+      "contextK": 1000,
+      "inputPerM": 2,
+      "outputPerM": 12,
+      "efforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "scores": {
+        "reasoning": 90,
+        "coding": 88,
+        "review": 85,
+        "research": 93,
+        "writing": 86,
+        "speed": 60,
+        "economy": 70
+      },
+      "summary": "El Gemini más potente disponible (aún en preview, de febrero): contexto enorme, fuerte investigando y razonando.",
+      "availability": "Esfuerzo solo con Antigravity (`agy`); el Gemini CLI no lo permite. Solo funciona con clave de API, Vertex o Code Assist Standard/Enterprise en el Gemini CLI; con cuenta personal de Google, usa Antigravity.",
+      "benchmarks": [
+        {
+          "id": "swe-bench-verified",
+          "value": 80.6,
+          "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
+          "asOf": "2026-02-19",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "swe-bench-pro",
+          "value": 54.2,
+          "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
+          "asOf": "2026-02-19",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "terminal-bench-2",
+          "value": 68.5,
+          "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
+          "asOf": "2026-02-19",
+          "independent": false,
+          "verified": false,
+          "note": "Terminal-Bench 2.0"
+        },
+        {
+          "id": "gpqa-diamond",
+          "value": 94.3,
+          "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
+          "asOf": "2026-02-19",
+          "independent": false,
+          "verified": false,
+          "note": "Otra fuente cita 95.5"
+        },
+        {
+          "id": "hle",
+          "value": 44.4,
+          "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
+          "asOf": "2026-02-19",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "arc-agi-2",
+          "value": 77.1,
+          "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/",
+          "asOf": "2026-02-19",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "output-speed",
+          "value": 113,
+          "source": "https://artificialanalysis.ai/models/gemini-3-1-pro-preview",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.8-flash",
+      "provider": "gemini",
+      "displayName": "Gemini 3.8 Flash",
+      "tier": "strong",
+      "status": "current",
+      "contextK": 1000,
+      "inputPerM": 0.75,
+      "outputPerM": 3.75,
+      "efforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "scores": {
+        "reasoning": 86,
+        "coding": 82,
+        "review": 80,
+        "research": 88,
+        "writing": 82,
+        "speed": 95,
+        "economy": 90
+      },
+      "summary": "Novedad de septiembre: el modelo más rápido del catálogo y muy barato. Flojo en tareas agénticas largas.",
+      "availability": "Precio promocional hasta el 31/12/2026 (luego $1.50/$7.50). Esfuerzo solo con Antigravity (`agy`); el Gemini CLI no lo permite. Solo funciona con clave de API, Vertex o Code Assist Standard/Enterprise en el Gemini CLI; con cuenta personal de Google, usa Antigravity.",
+      "benchmarks": [
+        {
+          "id": "aa-intelligence",
+          "value": 59,
+          "source": "https://artificialanalysis.ai/articles/gemini-3-8-flash",
+          "asOf": "2026-09-02",
+          "independent": true,
+          "verified": false,
+          "note": "Dato contradictorio: otra fuente indica 41"
+        },
+        {
+          "id": "output-speed",
+          "value": 240,
+          "source": "https://artificialanalysis.ai/models/gemini-3-8-flash",
+          "asOf": "2026-09",
+          "independent": true,
+          "verified": false,
+          "note": "Entre 239 y 305 tok/s según la fuente"
+        },
+        {
+          "id": "terminal-bench-4",
+          "value": 19.1,
+          "source": "https://www.vellum.ai/blog/gemini-3-8-flash-benchmarks-explained",
+          "asOf": "2026-09",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "gpqa-diamond",
+          "value": 94.4,
+          "source": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+          "asOf": "2026-09",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "osworld",
+          "value": 59.0,
+          "source": "https://www.vellum.ai/blog/gemini-3-8-flash-benchmarks-explained",
+          "asOf": "2026-09",
+          "independent": false,
+          "verified": false,
+          "note": "OSWorld 2.0"
+        }
+      ]
+    },
+    {
+      "id": "gemini-3.5-flash",
+      "provider": "gemini",
+      "displayName": "Gemini 3.5 Flash",
+      "tier": "fast",
+      "status": "current",
+      "contextK": 1000,
+      "inputPerM": 1.5,
+      "outputPerM": 9,
+      "efforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "scores": {
+        "reasoning": 80,
+        "coding": 82,
+        "review": 78,
+        "research": 84,
+        "writing": 80,
+        "speed": 88,
+        "economy": 78
+      },
+      "summary": "Flash de mayo: bueno en tareas agénticas y multimodales; más débil en razonamiento académico. Más caro que 3.8 Flash.",
+      "availability": "Esfuerzo solo con Antigravity (`agy`); el Gemini CLI no lo permite. Solo funciona con clave de API, Vertex o Code Assist Standard/Enterprise en el Gemini CLI; con cuenta personal de Google, usa Antigravity.",
+      "benchmarks": [
+        {
+          "id": "swe-bench-verified",
+          "value": 79.3,
+          "source": "https://deepmind.google/models/model-cards/gemini-3-5-flash/",
+          "asOf": "2026-05",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "terminal-bench-2",
+          "value": 76.2,
+          "source": "https://deepmind.google/models/model-cards/gemini-3-5-flash/",
+          "asOf": "2026-05",
+          "independent": false,
+          "verified": false,
+          "note": "Terminal-Bench 2.1 (Terminus-2)"
+        },
+        {
+          "id": "gpqa-diamond",
+          "value": 92.2,
+          "source": "https://deepmind.google/models/model-cards/gemini-3-5-flash/",
+          "asOf": "2026-05",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "hle",
+          "value": 40.2,
+          "source": "https://deepmind.google/models/model-cards/gemini-3-5-flash/",
+          "asOf": "2026-05",
+          "independent": false,
+          "verified": false
+        },
+        {
+          "id": "arc-agi-2",
+          "value": 72.1,
+          "source": "https://deepmind.google/models/model-cards/gemini-3-5-flash/",
+          "asOf": "2026-05",
+          "independent": false,
+          "verified": false
+        }
+      ]
+    }
+  ]
+}
