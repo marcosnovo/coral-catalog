@@ -1,5 +1,5 @@
 {
-  "_comment": "Coral's live model catalog — the single source of truth (scripts/gen-catalog.py embeds it in the app). Each model lists PUBLIC evidence (benchmarks with source URL, date, vendor vs independent, and whether the number was read on the source page ('verified') or only seen in a search snippet / third-party copy). Coral computes the 0-100 capability scores from this evidence (Sources/CoralCore/Catalog/Scoring.swift); 'scores' are only the fallback estimate for capabilities with no evidence. Benchmark ids: see BenchmarkKind.all.",
+  "_comment": "Coral's live model catalog — the single source of truth (scripts/gen-catalog.py embeds it in the app). Each model lists PUBLIC evidence (benchmarks with source URL, date, vendor vs independent, and whether the number was read on the source page ('verified') or only seen in a search snippet / third-party copy). Coral computes the 0-100 capability scores from this evidence (Sources/CoralCore/Catalog/Scoring.swift); 'scores' are only the fallback estimate for capabilities with no evidence. Benchmark ids: see BenchmarkKind.all. 'minCLIVersion' (optional) = the oldest CLI version that can run the model, as the CLI's own error message states; Coral falls back to an older model and offers the update when the installed CLI is older.",
   "asOf": "2026-09-30",
   "models": [
     {
@@ -119,6 +119,7 @@
       "displayName": "Claude Opus 5.5",
       "tier": "frontier",
       "status": "current",
+      "minCLIVersion": "2.1.280",
       "contextK": 1000,
       "inputPerM": 4,
       "outputPerM": 20,
